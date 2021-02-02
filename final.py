@@ -1,8 +1,3 @@
-from flask import Flask, render_template, request
-import numpy as np
-import speech_recognition as sr 
-import wave, math, contextlib
-import nltk
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 import string
@@ -12,6 +7,8 @@ from nltk import sent_tokenize, word_tokenize, PorterStemmer
 from moviepy.editor import AudioFileClip
 from os import path
 import os
+import nltk
+!pip install flaskwebgui
 from gensim.summarization import keywords
 nltk.download('stopwords')
 try :
@@ -26,7 +23,8 @@ try :
 except LookupError:
   nltk.download('wordnet')
 print("Imports Done")
-from flaskwebgui import FlaskUI #get the FlaskUI class
+from flask import Flask
+from flaskwebgui import FlaskUI
 
 app = Flask(__name__)
 ui = FlaskUI(app)
@@ -134,4 +132,5 @@ def upload_file():
 if __name__ == '__main__':
    ui.run()   
 
+ 
  
