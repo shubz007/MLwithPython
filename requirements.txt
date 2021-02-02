@@ -1,0 +1,9 @@
+scikit-learn
+gensim
+moviepy
+speechrecognition
+flask
+flaskwebgui
+punctuator
+nltk
+numpy
