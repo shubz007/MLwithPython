@@ -8,7 +8,7 @@ from moviepy.editor import AudioFileClip
 from os import path
 import os
 import nltk
-pip install flaskwebgui
+import flaskwebgui
 from gensim.summarization import keywords
 nltk.download('stopwords')
 try :
