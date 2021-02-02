@@ -7,3 +7,4 @@ flaskwebgui
 punctuator
 nltk
 numpy
+streamlit
