@@ -3,8 +3,10 @@ gensim
 moviepy
 speechrecognition
 flask
-flaskwebgui
 punctuator
 nltk
 numpy
 streamlit
+speechrecognition moviepy pydub punctuator
+progress
+flask_ngrok
