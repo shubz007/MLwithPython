@@ -132,6 +132,6 @@ def upload_file():
     
     return render_template("summary.html",a=a,final=final,punctuated=text,lens=lens)
 if __name__ == '__main__':
-   app.run(debug=True)
+   app.run()
 
  
