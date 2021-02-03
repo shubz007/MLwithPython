@@ -7,6 +7,6 @@ punctuator
 nltk
 numpy
 streamlit
-speechrecognition moviepy pydub punctuator
 progress
 flask_ngrok
+pydub 
