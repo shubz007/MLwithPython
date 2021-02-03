@@ -8,7 +8,7 @@ from moviepy.editor import AudioFileClip
 from os import path
 import os
 import nltk
-import flaskwebgui
+import flask
 from gensim.summarization import keywords
 nltk.download('stopwords')
 try :
@@ -24,7 +24,7 @@ except LookupError:
   nltk.download('wordnet')
 print("Imports Done")
 from flask import Flask
-from flaskwebgui import FlaskUI
+from flask import FlaskUI
 
 app = Flask(__name__)
 ui = FlaskUI(app)
