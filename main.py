@@ -24,7 +24,6 @@ except LookupError:
   nltk.download('wordnet')
 print("Imports Done")
 from flask import Flask
-from flask import FlaskUI
 
 app = Flask(__name__)
 ui = FlaskUI(app)
