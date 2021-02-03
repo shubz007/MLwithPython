@@ -1,3 +1,8 @@
+from flask import Flask, render_template, request
+import numpy as np
+import speech_recognition as sr 
+import wave, math, contextlib
+import nltk
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 import string
@@ -7,9 +12,8 @@ from nltk import sent_tokenize, word_tokenize, PorterStemmer
 from moviepy.editor import AudioFileClip
 from os import path
 import os
-import nltk
-import flask
 from gensim.summarization import keywords
+from flask_ngrok import run_with_ngrok
 nltk.download('stopwords')
 try :
   nltk.data.find('tokenizers/punkt')
@@ -23,10 +27,8 @@ try :
 except LookupError:
   nltk.download('wordnet')
 print("Imports Done")
-from flask import Flask
-
 app = Flask(__name__)
-ui = FlaskUI(app)
+run_with_ngrok(app)
 @app.route('/')
 def uploads_file():
    return render_template('Transcribo.html')
@@ -71,6 +73,7 @@ def punctuates(doo=True):
         return text
 
 @app.route('/uploader', methods = ['GET', 'POST'])
+
 def upload_file():
     if request.method == 'POST':
         f = request.files['file']
@@ -129,7 +132,6 @@ def upload_file():
     
     return render_template("summary.html",a=a,final=final,punctuated=text,lens=lens)
 if __name__ == '__main__':
-   ui.run()   
+   app.run()
 
- 
  
